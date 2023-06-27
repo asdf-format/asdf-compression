@@ -2,7 +2,7 @@ from asdf.extension import Compressor
 
 
 class ZstdCompressor(Compressor):
-    label = 'zstd'
+    label = b"zstd"
 
     def compress(self, data, **kwargs):
         import zstandard
@@ -17,10 +17,10 @@ class ZstdCompressor(Compressor):
 
         decompressor = zstandard.ZstdDecompressor(**kwargs)
         dobj = decompressor.decompressobj()
-        nbytes = 0
+        i = 0
         for block in data:
             decomp = dobj.decompress(block)
             n = len(decomp)
             out[i : i + n] = decomp
-            nbytes += n
-        return nbytes
+            i += n
+        return i

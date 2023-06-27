@@ -7,7 +7,7 @@ ASDF support for zstandard compression
 
 This packages includes a plugin for the Python library
 `asdf <https://asdf.readthedocs.io/en/latest/>`__ to add support
-for reading and writing 
+for reading and writing
 `Zstandard <http://facebook.github.io/zstd/>`__ compressed ASDF blocks.
 
 

@@ -1,6 +1,6 @@
 import asdf
 
-from .compression import ZstdCompressor
+from .compressor import ZstdCompressor
 
 
 class ZstdExtension(asdf.extension.Extension):
