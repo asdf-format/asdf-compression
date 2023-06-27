@@ -1,8 +1,8 @@
 ASDF support for zstandard compression
 -----------------------------------
 
-.. image:: https://github.com/asdf-format/asdf-zarr/workflows/CI/badge.svg
-    :target: https://github.com/asdf-format/asdf-zarr/actions
+.. image:: https://github.com/asdf-format/asdf-zstd/workflows/CI/badge.svg
+    :target: https://github.com/asdf-format/asdf-zstd/actions
     :alt: CI Status
 
 This packages includes a plugin for the Python library
