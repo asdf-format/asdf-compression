@@ -1,6 +1,6 @@
 [project]
-name = "asdf_zstd"
-description = "Asdf extension to support Zstandard compression"
+name = "asdf_compression"
+description = "Asdf extension to support various compression algorithms"
 readme = 'README.rst'
 license = { file = 'LICENSE' }
 authors = [{ name = 'The ASDF Developers', email = 'help@stsci.edu' }]
@@ -19,18 +19,29 @@ dynamic = [
 ]
 dependencies = [
   "asdf >= 2.15",
-  "zstandard >= 0.21.0",
 ]
 
 [project.optional-dependencies]
 tests = [
   "pytest>=6",
 ]
+blsc = [
+   "blosc>=1.9.2",
+]
+lz4f = [
+  "lz4>=0.10",
+]
+zstd = [
+  "zstandard >= 0.21.0",
+]
+all = [
+  "asdf_compression[blsc,lz4f,zstd]"
+]
 
 [project.urls]
-'documentation' = 'https://asdf-zstd.readthedocs.io/en/latest'
-'repository' = 'https://github.com/braingram/asdf-zstd'
-'tracker' = 'https://github.com/braingram/asdf-zstd/issues'
+'documentation' = 'https://asdf-compression.readthedocs.io/en/latest'
+'repository' = 'https://github.com/braingram/asdf-compression'
+'tracker' = 'https://github.com/braingram/asdf-compression/issues'
 
 [build-system]
 build-backend = 'setuptools.build_meta'
@@ -41,14 +52,14 @@ requires = [
 ]
 
 [project.entry-points]
-'asdf.extensions' = {asdf = 'asdf_zstd.extensions:get_extensions'}
+'asdf.extensions' = {asdf = 'asdf_compression.extensions:get_extensions'}
 
 [tool.setuptools.packages.find]
-include = ["asdf_zstd*"]
+include = ["asdf_compression*"]
 namespaces = false
 
 [tool.setuptools_scm]
-write_to = "asdf_zstd/_version.py"
+write_to = "asdf_compression/_version.py"
 
 [tool.black]
 line-length = 120

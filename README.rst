@@ -1,32 +1,32 @@
-ASDF support for zstandard compression
------------------------------------
+ASDF support for various compression algorithms
+-----------------------------------------------
 
-.. image:: https://github.com/asdf-format/asdf-zstd/workflows/CI/badge.svg
-    :target: https://github.com/asdf-format/asdf-zstd/actions
+.. image:: https://github.com/asdf-format/asdf-compression/workflows/CI/badge.svg
+    :target: https://github.com/asdf-format/asdf-compression/actions
     :alt: CI Status
 
 This packages includes a plugin for the Python library
 `asdf <https://asdf.readthedocs.io/en/latest/>`__ to add support
-for reading and writing
-`Zstandard <http://facebook.github.io/zstd/>`__ compressed ASDF blocks.
+for reading and writing various compression algorithms including:
+
+* `Zstandard <http://facebook.github.io/zstd/>`__
 
 
 Installation
 ------------
 
-This plugin is not yet stable and released on
-PyPi
+This plugin is not yet stable and released on PyPi
 
 .. code-block:: console
 
-    $ pip install git+https://github.com/braingram/asdf-zstd
+    $ pip install git+https://github.com/braingram/asdf-compression
 
 Or alternatively by cloning and installing this repository.
 
 .. code-block:: console
 
-    $ git clone https://github.com/braingram/asdf-zstd
-    $ cd asdf-zstd
+    $ git clone https://github.com/braingram/asdf-compression
+    $ cd asdf-compression
     $ pip install .
 
 

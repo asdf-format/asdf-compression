@@ -4,12 +4,13 @@ import io
 import os
 
 import numpy as np
+import pytest
 
 import asdf
 from asdf import generic_io
 from asdf._tests import _helpers as helpers
 
-RNG = np.random.default_rng(0) # init random number generator with seed 0
+RNG = np.random.default_rng(0)  # init random number generator with seed 0
 
 
 def _get_large_tree():
@@ -56,6 +57,7 @@ def _roundtrip(tmp_path, tree, compression=None, write_options=None, read_option
     return tmpfile
 
 
-def test_zstd(tmp_path):
+@pytest.mark.parametrize("label", ["blsc", "lz4f", "zstd"])
+def test_label(tmp_path, label):
     tree = _get_large_tree()
-    _roundtrip(tmp_path, tree, "zstd")
+    _roundtrip(tmp_path, tree, label)
