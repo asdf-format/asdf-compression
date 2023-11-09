@@ -24,7 +24,7 @@ using the ``all`` optional parameters.
 
 .. code-block:: console
 
-    $ pip install "asdf-compress[all] @ git+https://github.com/braingram/asdf-compression"
+    $ pip install "asdf-compression[all] @ git+https://github.com/braingram/asdf-compression"
 
 Or alternatively by cloning and installing this repository.
 
