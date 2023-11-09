@@ -17,11 +17,14 @@ for reading and writing various compression algorithms including:
 Installation
 ------------
 
-This plugin is not yet stable and released on PyPi
+This plugin is not yet stable and released on PyPi.
+
+To install all compression algorithms supported by asdf-compression, install
+using the ``all`` optional parameters.
 
 .. code-block:: console
 
-    $ pip install git+https://github.com/braingram/asdf-compression
+    $ pip install "asdf-compress[all] @ git+https://github.com/braingram/asdf-compression"
 
 Or alternatively by cloning and installing this repository.
 
@@ -29,11 +32,36 @@ Or alternatively by cloning and installing this repository.
 
     $ git clone https://github.com/braingram/asdf-compression
     $ cd asdf-compression
-    $ pip install .
+    $ pip install ".[all]"
 
+If only a specific algorithm is needed, just that algorithm can be installed.
+
+.. code-block:: console
+    $ pip install ".[zstd]"
+
+Or a subset can be selected
+
+.. code-block:: console
+    $ pip install ".[zstd,blsc]"
 
 Usage
 -----
+
+When installed ``asdf-compression`` will register any supported and available
+compression algorithms with asdf using the
+`Compressor <https://asdf.readthedocs.io/en/latest/asdf/extending/compressors.html>`__
+interface.
+
+The following example shows saving an array with ``zstandard`` compression provided
+via ``asdf-compression``.
+
+.. code-block:: python
+
+    import asdf, numpy as np
+
+    af = asdf.AsdfFile({"arr": np.arange(42)})
+    af.set_array_compression(af["arr"], "zstd")
+    af.write_to("test.asdf")
 
 
 Testing
