@@ -69,5 +69,5 @@ jobs:
     with:
       upload_to_pypi: false
       upload_to_anaconda: false
-      test_extras: tests
-      test_command: pytest --pyargs asdf_zstd
+      test_extras: all,tests
+      test_command: pytest --pyargs asdf_compression

@@ -9,6 +9,8 @@ This packages includes a plugin for the Python library
 `asdf <https://asdf.readthedocs.io/en/latest/>`__ to add support
 for reading and writing various compression algorithms including:
 
+* `Blosc <https://www.blosc.org/python-blosc/reference.html>`__
+* `LZ4 Frame <https://python-lz4.readthedocs.io/en/stable/lz4.frame.html>`__
 * `Zstandard <http://facebook.github.io/zstd/>`__
 
 
