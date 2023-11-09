@@ -10,7 +10,7 @@ This packages includes a plugin for the Python library
 for reading and writing various compression algorithms including:
 
 * `Blosc <https://www.blosc.org/python-blosc/reference.html>`__
-* `LZ4 Frame <https://python-lz4.readthedocs.io/en/stable/lz4.frame.html>`__
+* `LZ4 Frame and Block <https://python-lz4.readthedocs.io/en/stable/lz4.frame.html>`__
 * `Zstandard <http://facebook.github.io/zstd/>`__
 
 
@@ -37,12 +37,12 @@ Or alternatively by cloning and installing this repository.
 If only a specific algorithm is needed, just that algorithm can be installed.
 
 .. code-block:: console
-    $ pip install ".[zstd]"
+    $ pip install ".[zstandard]"
 
 Or a subset can be selected
 
 .. code-block:: console
-    $ pip install ".[zstd,blsc]"
+    $ pip install ".[zstandard,blosc]"
 
 Usage
 -----

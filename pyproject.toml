@@ -19,23 +19,24 @@ dynamic = [
 ]
 dependencies = [
   "asdf >= 2.15",
+  "numpy>=1.22",
 ]
 
 [project.optional-dependencies]
 tests = [
   "pytest>=6",
 ]
-blsc = [
+blosc = [
    "blosc>=1.9.2",
 ]
-lz4f = [
+lz4 = [
   "lz4>=0.10",
 ]
-zstd = [
+zstandard = [
   "zstandard >= 0.21.0",
 ]
 all = [
-  "asdf_compression[blsc,lz4f,zstd]"
+  "asdf_compression[blosc,lz4,zstandard]"
 ]
 
 [project.urls]

@@ -57,7 +57,7 @@ def _roundtrip(tmp_path, tree, compression=None, write_options=None, read_option
     return tmpfile
 
 
-@pytest.mark.parametrize("label", ["blsc", "lz4f", "zstd"])
+@pytest.mark.parametrize("label", ["blsc", "lz4b", "lz4f", "zstd"])
 def test_label(tmp_path, label):
     tree = _get_large_tree()
     _roundtrip(tmp_path, tree, label)
