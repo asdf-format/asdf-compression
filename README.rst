@@ -24,13 +24,13 @@ using the ``all`` optional parameters.
 
 .. code-block:: console
 
-    $ pip install "asdf-compression[all] @ git+https://github.com/braingram/asdf-compression"
+    $ pip install "asdf-compression[all] @ git+https://github.com/asdf-format/asdf-compression"
 
 Or alternatively by cloning and installing this repository.
 
 .. code-block:: console
 
-    $ git clone https://github.com/braingram/asdf-compression
+    $ git clone https://github.com/asdf-format/asdf-compression
     $ cd asdf-compression
     $ pip install ".[all]"
 

@@ -40,8 +40,8 @@ all = [
 
 [project.urls]
 'documentation' = 'https://asdf-compression.readthedocs.io/en/latest'
-'repository' = 'https://github.com/braingram/asdf-compression'
-'tracker' = 'https://github.com/braingram/asdf-compression/issues'
+'repository' = 'https://github.com/asdf-format/asdf-compression'
+'tracker' = 'https://github.com/asdf-format/asdf-compression/issues'
 
 [build-system]
 build-backend = 'setuptools.build_meta'
