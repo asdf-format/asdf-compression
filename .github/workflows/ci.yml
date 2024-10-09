@@ -2,10 +2,11 @@ name: CI
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '0 7 * * 1'  # Every Monday at 7am UTC
   push:
     branches:
       - main
-      - stable
       - '*.x'
     tags:
       - '*'
@@ -28,6 +29,12 @@ jobs:
       default_python: '3.10'
       envs: |
         - linux: coverage
+          name: Python 3.13 coverage
+          python-version: 3.13
+        - linux: coverage
+          name: Python 3.12 coverage
+          python-version: 3.12
+        - linux: coverage
           name: Python 3.11 coverage
           python-version: 3.11
         - linux: coverage
@@ -45,10 +52,10 @@ jobs:
     with:
       submodules: false
       # Any env name which does not start with `pyXY` will use this Python version.
-      default_python: '3.9'
+      default_python: '3.12'
       envs: |
-        - macos: py39-parallel
-        - windows: py39-parallel
+        - macos: py312-parallel
+        - windows: py312-parallel
 
   dev:
     needs: [core]
@@ -56,12 +63,13 @@ jobs:
     with:
       submodules: false
       # Any env name which does not start with `pyXY` will use this Python version.
-      default_python: '3.9'
+      default_python: '3.11'
       envs: |
         - linux: py39-devdeps-parallel
         - linux: py310-devdeps-parallel
         - linux: py311-devdeps-parallel
         - linux: py312-devdeps-parallel
+        - linux: py313-devdeps-parallel
 
   package:
     needs: [core]
