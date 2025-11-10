@@ -37,11 +37,13 @@ Or alternatively by cloning and installing this repository.
 If only a specific algorithm is needed, just that algorithm can be installed.
 
 .. code-block:: console
+
     $ pip install ".[zstd]"
 
 Or a subset can be selected
 
 .. code-block:: console
+
     $ pip install ".[zstd,blsc]"
 
 Usage
