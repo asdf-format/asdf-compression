@@ -47,6 +47,7 @@ develop-eggs
 .installed.cfg
 distribute-*.tar.gz
 pip-wheel-metadata
+.python-version
 
 # Other
 .*.swp

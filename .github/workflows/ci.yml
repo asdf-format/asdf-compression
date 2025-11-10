@@ -29,6 +29,9 @@ jobs:
       default_python: '3.10'
       envs: |
         - linux: coverage
+          name: Python 3.14 coverage
+          python-version: 3.14
+        - linux: coverage
           name: Python 3.13 coverage
           python-version: 3.13
         - linux: coverage
@@ -40,9 +43,6 @@ jobs:
         - linux: coverage
           name: Python 3.10 coverage
           python-version: 3.10
-        - linux: coverage
-          name: Python 3.9 coverage
-          python-version: 3.9
       # TODO uncomment after adding to codecov
       # coverage: codecov
 
@@ -52,10 +52,10 @@ jobs:
     with:
       submodules: false
       # Any env name which does not start with `pyXY` will use this Python version.
-      default_python: '3.12'
+      default_python: '3.13'
       envs: |
-        - macos: py312-parallel
-        - windows: py312-parallel
+        - macos: py313-parallel
+        - windows: py313-parallel
 
   dev:
     needs: [core]
@@ -65,11 +65,11 @@ jobs:
       # Any env name which does not start with `pyXY` will use this Python version.
       default_python: '3.11'
       envs: |
-        - linux: py39-devdeps-parallel
         - linux: py310-devdeps-parallel
         - linux: py311-devdeps-parallel
         - linux: py312-devdeps-parallel
         - linux: py313-devdeps-parallel
+        - linux: py314-devdeps-parallel
 
   package:
     needs: [core]
