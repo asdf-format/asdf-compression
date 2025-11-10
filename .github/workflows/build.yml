@@ -1,0 +1,17 @@
+name: build
+
+on:
+  pull_request:
+  release:
+    types: [released]
+  workflow_dispatch:
+
+jobs:
+  build:
+    uses: OpenAstronomy/github-actions-workflows/.github/workflows/publish_pure_python.yml@v2
+    with:
+      upload_to_pypi: ${{ (github.event_name == 'release') && (github.event.action == 'released') }}
+      test_extras: tests,all
+      test_command: pytest --pyargs asdf_compression
+    secrets:
+      pypi_token: ${{ secrets.PYPI_PASSWORD_ASDF_MAINTAINER }}
