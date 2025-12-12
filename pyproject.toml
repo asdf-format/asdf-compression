@@ -24,6 +24,9 @@ tests = [
 blsc = [
    "blosc>=1.9.2",
 ]
+bls2 = [
+   "blosc2>=3.12.2",
+]
 lz4f = [
   "lz4>=0.10",
 ]
@@ -31,7 +34,7 @@ zstd = [
   "zstandard >= 0.21.0",
 ]
 all = [
-  "asdf_compression[blsc,lz4f,zstd]"
+  "asdf_compression[blsc,lz4f,zstd,bls2]"
 ]
 
 [project.urls]
