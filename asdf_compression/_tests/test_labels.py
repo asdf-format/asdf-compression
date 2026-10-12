@@ -3,12 +3,11 @@
 import io
 import os
 
+import asdf
 import numpy as np
 import pytest
-
-import asdf
-from asdf import generic_io
 from asdf._tests import _helpers as helpers
+from asdf.generic_io import OutputStream
 
 RNG = np.random.default_rng(0)  # init random number generator with seed 0
 
@@ -48,10 +47,10 @@ def _roundtrip(tmp_path, tree, compression=None, write_options=None, read_option
     buff = io.BytesIO()
 
     ff = asdf.AsdfFile(tree)
-    ff.write_to(generic_io.OutputStream(buff), **write_options)
+    ff.write_to(OutputStream(buff), **write_options)
 
     buff.seek(0)
-    with asdf.open(generic_io.InputStream(buff), **read_options) as ff:
+    with asdf.open(buff, **read_options) as ff:
         helpers.assert_tree_match(tree, ff.tree)
 
     return tmpfile
